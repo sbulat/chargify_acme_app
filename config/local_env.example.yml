@@ -1,0 +1,3 @@
+# Rename this file to local_env.yml
+# This file will be preload and to can access all variable through ENV var
+FAKEPAY_API_KEY: '<YOUR FAKEPAY API KEY>'

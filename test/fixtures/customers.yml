@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  address: MyString
+  shipping_zip_code: MyString
+  card_number: MyString
+  card_cvv: MyString
+  billing_zip_code: MyString
+
+two:
+  first_name: MyString
+  last_name: MyString
+  address: MyString
+  shipping_zip_code: MyString
+  card_number: MyString
+  card_cvv: MyString
+  billing_zip_code: MyString

@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Acme Online</h1>
+  </div>
+  <div class="row">
+    <%= form_tag api_create_subscriptions_path, class: 'subscribe col-md-12' do %>
+      <div class="row">
+        <h3>Choose Product</h3>
+        <div class="col-md-12">
+          <%= select_tag 'product', options_from_collection_for_select(Product.all, 'id', 'name') %>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Shipping Information</h3>
+        <div class="col-md-12">
+          <%= text_field_tag 'shipping[client_name]', '', placeholder: 'Full Name' %>
+        </div>
+        <div class="col-md-12">
+          <%= text_field_tag 'shipping[client_address]', '', placeholder: 'Address' %>
+        </div>
+        <div class="col-md-12">
+          <%= text_field_tag 'shipping[client_zip_code]', '', placeholder: 'Shipping Zip Code' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Billing Information</h3>
+        <div class="col-md-12">
+          <%= text_field_tag 'billing[card_number]', '', placeholder: 'Card Number' %>
+        </div>
+        <div class="col-md-12">
+          <%= text_field_tag 'billing[exp_month]', '', placeholder: 'Expiration Month' %>
+        </div>
+        <div class="col-md-12">
+          <%= text_field_tag 'billing[exp_year]', '', placeholder: 'Expiration Year' %>
+        </div>
+        <div class="col-md-12">
+          <%= text_field_tag 'billing[cvv]', '', placeholder: 'CVV' %>
+        </div>
+        <div class="col-md-12">
+          <%= text_field_tag 'billing[zip_code]', '', placeholder: 'Billing Zip Code' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <%= submit_tag 'Subscribe!' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

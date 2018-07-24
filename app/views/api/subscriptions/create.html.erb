@@ -1,0 +1,10 @@
+<% if @payment_status[:subscription] %>
+  <% if @payment_status[:subscription].errors.any? %>
+    <p>Errors while saving subscription</p>
+  <% else %>
+    <p>Successfully created subscription!</p>
+    <p>Subscription will be renewed on <%= @payment_status[:subscription].billing_date.strftime('%d-%m-%Y') %></p>
+  <% end %>
+<% elsif @payment_status[:code] %>
+  <p>Error occured: <%= error_message(@payment_status[:code]) %> (<%= @payment_status[:code] %>)</p>
+<% end %>
