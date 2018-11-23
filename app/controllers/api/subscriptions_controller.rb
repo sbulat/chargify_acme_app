@@ -3,12 +3,12 @@ module Api
     def create
       card = CreditCard.new(credit_card_params)
       unless card.valid?
-        redirect_to(:back, error: 'Credit card data not provided') && return
+        redirect_to(root_url, alert: 'Credit card data not provided') && return
       end
 
       @customer = Customer.new { |c| c.shipping_info = shipping_params }
       unless @customer.save
-        redirect_to(:back, error: 'Customer data not provided') && return
+        redirect_to(root_url, alert: 'Customer data not provided') && return
       end
 
       @payment_status = MakePaymentService.new(
